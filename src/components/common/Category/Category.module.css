@@ -1,0 +1,12 @@
+.card{
+    display: inline-flex !important;
+    margin: 10px;
+    padding:0rem 0rem !important;
+    overflow: hidden;
+}
+.card-title{
+    background-color: rgb(182, 181, 181);
+    width: 100%;
+    
+   
+}

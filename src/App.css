@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #4682BF;
 }
 
 .App-logo {
@@ -35,4 +36,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar{
+  z-index: 200;
+  position: absolute;
+  display: block !important;
 }

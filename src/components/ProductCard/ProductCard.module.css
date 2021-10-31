@@ -1,0 +1,32 @@
+.card {
+	display: inline-flex !important;
+	margin: 10px;
+	overflow: hidden;
+    border-width: 2px !important;
+  
+}
+
+.card:hover{
+    transition: 50ms linear;
+    transform: scale(1.1);
+}
+
+.image {
+	width:20rem;
+	height:24rem;
+    background-size: cover;
+}
+.button{
+    width: 11rem;
+    height: 4rem;
+    margin:12px;
+    font-size: 1.5rem !important;
+    background-color: #0047AB !important;
+    border-color: #0047AB !important;
+    border-radius: 8px !important;
+}
+
+.button:hover{
+    background-color: #0d4086 !important;
+
+}
