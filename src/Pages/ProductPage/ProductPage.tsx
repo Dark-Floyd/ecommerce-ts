@@ -1,5 +1,5 @@
-import { Card } from 'react-bootstrap';
-import { useParams, RouteComponentProps, withRouter } from 'react-router-dom';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { useParams, RouteComponentProps, withRouter, useHistory } from 'react-router-dom';
 import classes from './ProductPage.module.css';
 import products from '../../collectibles';
 import { Product } from '../../models/product';
@@ -11,22 +11,32 @@ interface Props extends RouteComponentProps<RouteParams> {
 	getProduct: Product;
 }
 
-const ProductPage: React.FC<Props> = ({match}) => {
+const ProductPage: React.FC<Props> = (props) => {
 	const { id } = useParams<RouteParams>();
-
-	const product = products.find((item) => Number(item.id) === Number(id +match.params.id));
+	const history = useHistory();
+	const product = products.find((item) => Number(item.id) === Number(id));
 	
+
 	return (
 		<div className={classes['background']}>
-			{product ? (
-				<FullProduct product={product}></FullProduct>
-			) : (
-				<Card>
-					<Card.Body>
-						<Card.Title>product not found</Card.Title>
-					</Card.Body>
-				</Card>
-			)}
+			<Container>
+				<Row>
+					<Col sm={2} md={2} lg={2}>
+						<Button onClick={() => history.push('/')} className={classes['button']} style={{ fontWeight: 'bold' }}>
+							Go Back
+						</Button>
+					</Col>
+				</Row>
+				{product ? (
+					<FullProduct product={product}></FullProduct>
+				) : (
+					<Card>
+						<Card.Body>
+							<Card.Title>PRODUCT NOT FOUND</Card.Title>
+						</Card.Body>
+					</Card>
+				)}
+			</Container>
 		</div>
 	);
 };

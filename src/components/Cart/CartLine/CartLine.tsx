@@ -7,13 +7,21 @@ interface Props {
 	productCart: ProductCart;
 }
 
-const CartLine: React.FC<Props> = ( props ) => {
+const CartLine: React.FC<Props> = (props) => {
 	return (
 		<div>
 			<Container>
 				<Row style={{ height: '6rem', padding: '0.5rem' }}>
 					<Col sm={2} md={2} lg={2}>
-						{props.productCart.product.images}
+						<img
+							src={
+								props.productCart.product.images.length
+									? props.productCart.product.images[0]
+									: `${process.env.PUBLIC_URL}/images/noImageAvailable.jfif`
+							}
+							alt='Product'
+							className={classes['product-image']}
+						/>
 					</Col>
 					<Col sm={6} md={6} lg={6} style={{ textAlign: 'left', borderWidth: '2px', borderColor: 'black' }}>
 						<Row style={{ fontSize: '2rem', fontWeight: 'bold' }}></Row>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import { useAddToCart } from '../../hooks/useAddToCart';
 import { Product } from '../../models/product';
 import classes from './FullProduct.module.css';
@@ -12,7 +11,6 @@ interface Props {
 const FullProduct: React.FC<Props> = (props) => {
 
 	const {addCartProduct} = useAddToCart(props.product);
-	const history = useHistory();
 	const handleOnClick = (
         event: React.MouseEvent<HTMLElement, MouseEvent>
     ) => {
@@ -23,14 +21,7 @@ const FullProduct: React.FC<Props> = (props) => {
 	return (
 		<div>
 		<Container>
-				<Row>
-					<Col sm={2} md={2} lg={2}>
-						<Button onClick={() => history.push('/')} className={classes['button']} style={{ fontWeight: 'bold' }}>
-							Go Back
-						</Button>
-					</Col>
-					<Col sm={10} md={10} lg={10}></Col>
-				</Row>
+	
 
 				<Row>
 					<Col sm={5} md={5} lg={5}>
@@ -49,16 +40,16 @@ const FullProduct: React.FC<Props> = (props) => {
 									</Col>
 									<Col sm={7} md={7} lg={7}>
 										<Card.Text style={{ fontSize: '2rem', fontStyle: 'italic', display: 'inline-block' }}>
-											Uploaded:{props.product.uploadedDate}
+											Uploaded:{props.product.uploadedDate.getTime}
 										</Card.Text>
 									</Col>
 								</Row>
 
 								<Row>
 									<Card.Text style={{ fontSize: '2rem' }}>Description: {props.product.description}</Card.Text>
-									<Card.Text style={{ fontSize: '2rem' }}>Seller's name:{props.product.seller}</Card.Text>
-									<Card.Text style={{ fontSize: '2rem' }}>Category: {props.product.category}</Card.Text>
-									{/* {product?.additionalInfo.map(({ title, description }, i) => {
+									<Card.Text style={{ fontSize: '2rem' }}>Seller's name:{props.product.seller.name}</Card.Text>
+									<Card.Text style={{ fontSize: '2rem' }}>Category: {props.product.category.name}</Card.Text>
+									{props.product.additionalInfo?.map(({ title, description }, i) => {
 										return (
 											<div key={i}>
 												<Card.Text style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'left', paddingLeft: '2rem' }}>
@@ -69,7 +60,8 @@ const FullProduct: React.FC<Props> = (props) => {
 												</Card.Text>
 											</div>
 										);
-									})} */}
+									})}
+								
 								</Row>
 							</Card.Body>
 							<Row>

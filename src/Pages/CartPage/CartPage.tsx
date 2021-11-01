@@ -20,22 +20,8 @@ const CartPage: React.FC = () => {
 				</Row>
 				<Row>
 					<Col sm={12} md={12} lg={12}>
-						<Card style={{ backgroundColor: '#eeebd9', borderRadius: '8px',borderWidth:'2px',height:'40rem',width:'100rem'}}>
-							<Card.Title
-								style={{
-									backgroundColor: '#B11226 ',
-									height: '5rem',
-									color: 'white',
-									fontSize: '2.5rem',
-									borderTopLeftRadius: '8px',
-									borderTopRightRadius: '8px',
-									textAlign: 'center',
-                                    
-								}}
-							>
-								Shopping Cart
-							</Card.Title>
-
+						<Card className={classes['card']}>
+							<Card.Title className={classes['card-title']}>Shopping Cart</Card.Title>
 							<CartLines cart={cart}></CartLines>
 						</Card>
 					</Col>

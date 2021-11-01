@@ -1,3 +1,4 @@
+import { additionalInfo } from "./additionalinfo";
 import { Category } from "./category";
 import { Seller } from "./seller";
 
@@ -10,5 +11,5 @@ export interface Product {
     price: number;
     seller: Seller;
     category: Category;
-    additionalInfo?: string;
+    additionalInfo?: additionalInfo[];
 }

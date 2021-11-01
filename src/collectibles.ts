@@ -1,93 +1,148 @@
-import { Product } from "../src/models/product";
+import { Product } from '../src/models/product';
 
-	const products: Product[] = [
-		{
-			id: 1,
-			description: "The best in the whole world",
-			price: 1500,
-			images: [
-				`https://d3m9l0v76dty0.cloudfront.net/system/photos/5964878/original/33917bca37d8df558b405b612803028a.jpg`,
-				`https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/TCZ34_Z_P_194252022016_1.png`,
-			],
-			name: "Iphone 12 Pro Max",
-			category: {
-				name: "technology",
-			},
-			seller: {
-				name: "Apple",
-			},
-			uploadedDate: new Date("2020-02-01 15:30:30"),
+const products: Product[] = [
+	{
+		id: 1,
+		description: 'The leader of them all',
+		price: 2000,
+		images: [
+			'https://www.picclickimg.com/d/l400/pict/263579600949_/Optimus-Prime-Collectible-Autobots-Transformers-Dark-of-the.jpg',
+		],
+		name: 'Optimus Prime',
+		category: {
+			name: 'Autobots',
 		},
-		{
-			id: 2,
-			description: "Best google phone",
-			price: 600,
-			images: [
-				`https://www.notebookcheck.biz/uploads/tx_nbc2/4_zu_3_Teaser_Google_Pixel_5.jpg`,
-				`https://d3m9l0v76dty0.cloudfront.net/system/photos/5727350/large/ea0964e9743d98b2d76f9547309a5c6a.jpg`,
-				`https://d3m9l0v76dty0.cloudfront.net/system/photos/6342426/large/f1940c4c3007e95893e4879069773e3a.jpg`,
-			],
-			name: "Google Pixel 5",
-			category: {
-				name: "technology",
-			},
-			seller: {
-				name: "Samsung",
-			},
-			uploadedDate: new Date("2020-02-01 15:30:30"),
+		seller: {
+			name: 'Jolyn',
 		},
-		{
-			id: 3,
-			description: "Can survive nuclear war",
-			price: 20,
-			images: [
-				`https://img.zap.co.il/4/6/3/0/46140364c.gif`,
-				`https://www.imgshop.co.il/images/itempics/2098_040520201314401_large.jpg`,
-			],
-			name: "Nokia 3310",
-			category: {
-				name: "technology",
+		uploadedDate: new Date('2020-02-01 15:30:30'),
+		additionalInfo: [
+			{
+				title: 'Tags',
+				description: 'Movies',
 			},
-			seller: {
-				name: "Samsung",
+			{
+				title: 'Color',
+				description: 'Blue and Red',
 			},
-			uploadedDate: new Date("2020-02-01 15:30:30"),
-			additionalInfo: "Can survive everything",
+			{
+				title: 'Made in',
+				description: 'China',
+			},
+		],
+	},
+	{
+		id: 2,
+		description: 'Unspecified disorder of orbit',
+		price: 600,
+		images: ['https://i.pinimg.com/originals/f9/9f/85/f99f8544114435e7eadaf9debffa4c62.jpg'],
+		name: 'BumbleBee',
+		category: {
+			name: 'Autobots',
 		},
-		{
-			id: 4,
-			description: "Best phone with reasonable price",
-			price: 700,
-			images: [
-				`https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_zoom/WKG68_Z_P_8806090887185_1.png`,
-			],
-			name: "Samsung Galaxy S21 Ultra",
-			category: {
-				name: "technology",
-			},
-			seller: {
-				name: "Samsung",
-			},
-			uploadedDate: new Date("2020-02-01 15:30:30"),
+		seller: {
+			name: 'Zorah',
 		},
-		{
-			id: 5,
-			description: "2nd place best phone with reasonable price",
-			price: 500,
-			images: [
-				`https://d3m9l0v76dty0.cloudfront.net/system/photos/6435163/large/13306935537d3739f3de6c54ef774eb6.jpg`,
-			],
-			name: "Samsung Galaxy S20",
-			category: {
-				name: "technology",
+		uploadedDate: new Date('2020-02-01 15:30:30'),
+		additionalInfo: [
+			{
+				title: 'Tags',
+				description: 'Movies',
 			},
-			seller: {
-				name: "Samsung",
+			{
+				title: 'Color',
+				description: 'Yellow',
 			},
-			uploadedDate: new Date("2020-02-01 15:30:30"),
-			additionalInfo: "Kinda old though",
+			{
+				title: 'Made in',
+				description: 'China',
+			},
+		],
+	},
+	{
+		id: 3,
+		description: 'Pneumococcal arthritis, right elbow',
+		price: 200,
+		images: [`https://i.ebayimg.com/images/g/X28AAOSws0FgqcdK/s-l1600.jpg`],
+		name: 'Issac Clark',
+		category: {
+			name: 'Dead Space',
 		},
-	];
-	
-	export default products;
-	
+		seller: {
+			name: 'Zorah',
+		},
+		uploadedDate: new Date('2020-02-01 15:30:30'),
+		additionalInfo: [
+			{
+				title: 'Tags',
+				description: 'Video Games',
+			},
+			{
+				title: 'Material',
+				description: 'Plastic',
+			},
+			{
+				title: 'Made in',
+				description: 'United States',
+			},
+		],
+	},
+	{
+		id: 4,
+		description: 'Rip and Tear',
+		price: 700,
+		images: [`https://bbts1.azureedge.net/images/p/full/2018/05/2969985a-b65f-48d6-8838-a4de395fce7d.jpg`],
+		name: 'Doom Guy',
+		category: {
+			name: 'Doom',
+		},
+		seller: {
+			name: 'Jolyn',
+		},
+		uploadedDate: new Date('2020-02-01 15:30:30'),
+		additionalInfo: [
+			{
+				title: 'Tags',
+				description: 'Video Games',
+			},
+			{
+				title: 'Material',
+				description: 'Plastic',
+			},
+			{
+				title: 'Made in',
+				description: 'United States',
+			},
+		],
+	},
+	{
+		id: 5,
+		description: 'Pure Evil',
+		price: 500,
+		images: [`https://d3m9l0v76dty0.cloudfront.net/system/photos/6435163/large/13306935537d3739f3de6c54ef774eb6.jpg`],
+		name: 'Marauder Duck',
+		category: {
+			name: 'Doom',
+		},
+		seller: {
+			name: 'Lucias',
+		},
+		uploadedDate: new Date('2020-02-01 15:30:30'),
+		additionalInfo: [
+			{
+				title: 'Tags',
+				description: 'Video Games',
+			},
+			{
+				title: 'Material',
+				description: 'Rubber',
+			},
+			{
+				title: 'Made in',
+				description: 'United Kingdom',
+			},
+		],
+	},
+];
+
+export default products;

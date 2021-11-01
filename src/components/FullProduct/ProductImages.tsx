@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import styles from "./Product.module.css";
+import styles from "./FullProduct.module.css";
 
 interface Props {
     images: string[];
