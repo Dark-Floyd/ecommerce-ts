@@ -2,16 +2,30 @@ import React from 'react';
 import classes from './CartLine.module.css';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { ProductCart } from '../../../models/cart';
+import CounterInput from '../../common/CounterInput/CounterInput';
+import { useDeleteFromCart } from '../../../hooks/useDeleteFromCart';
+import { useUpdateAmountCart } from '../../../hooks/useUpdateAmountCart';
 
 interface Props {
 	productCart: ProductCart;
 }
-
 const CartLine: React.FC<Props> = (props) => {
+	const { deleteProductFromCart } = useDeleteFromCart(props.productCart.product.id);
+	const {updateCartProduct} = useUpdateAmountCart(props.productCart);
+
+
+	const onQuantityChange = (value: number) => {
+	    updateCartProduct(value);
+	};
+
+	const onTrash = () => {
+		deleteProductFromCart();
+	};
+
 	return (
 		<div>
-			<Container>
-				<Row style={{ height: '6rem', padding: '0.5rem' }}>
+			<Container className={classes['product-card']}>
+				<Row className={classes['product-col']}>
 					<Col sm={2} md={2} lg={2}>
 						<img
 							src={
@@ -23,16 +37,17 @@ const CartLine: React.FC<Props> = (props) => {
 							className={classes['product-image']}
 						/>
 					</Col>
-					<Col sm={6} md={6} lg={6} style={{ textAlign: 'left', borderWidth: '2px', borderColor: 'black' }}>
-						<Row style={{ fontSize: '2rem', fontWeight: 'bold' }}></Row>
+					<Col sm={6} md={6} lg={6}>
+						<Row style={{ fontWeight: 'bold' }}>{props.productCart.product.name}</Row>
 						<Row>{props.productCart.product.description}</Row>
 					</Col>
-
 					<Col sm={1} md={1} lg={1}>
-						{props.productCart.product.price}
+						{props.productCart.product.price}$
 					</Col>
 					<Col sm={2} md={2} lg={2}>
-						Amount
+						<CounterInput 
+						inputValue={props.productCart.amount}
+						onChange={onQuantityChange}></CounterInput>
 					</Col>
 					<Col sm={1} md={1} lg={1}>
 						<button className={classes['trash-button']}>
@@ -43,6 +58,8 @@ const CartLine: React.FC<Props> = (props) => {
 								fill='currentColor'
 								className='bi bi-trash'
 								viewBox='0 0 16 16'
+								onClick={onTrash}
+								style={{display:'block'}}
 							>
 								<path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z' />
 								<path

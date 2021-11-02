@@ -4,6 +4,7 @@ import classes from './ProductPage.module.css';
 import products from '../../collectibles';
 import { Product } from '../../models/product';
 import FullProduct from '../../components/FullProduct/FullProduct';
+import GoBackButton from '../../components/ui/CustomButton/CustomButton';
 interface RouteParams {
 	id: string;
 }
@@ -15,16 +16,13 @@ const ProductPage: React.FC<Props> = (props) => {
 	const { id } = useParams<RouteParams>();
 	const history = useHistory();
 	const product = products.find((item) => Number(item.id) === Number(id));
-	
 
 	return (
 		<div className={classes['background']}>
 			<Container>
 				<Row>
 					<Col sm={2} md={2} lg={2}>
-						<Button onClick={() => history.push('/')} className={classes['button']} style={{ fontWeight: 'bold' }}>
-							Go Back
-						</Button>
+						<GoBackButton onClick={() => history.push('/')} name={'Go Back'} />
 					</Col>
 				</Row>
 				{product ? (

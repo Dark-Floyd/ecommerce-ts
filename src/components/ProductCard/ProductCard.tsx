@@ -3,7 +3,6 @@ import { Card, Button, Row, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { useAddToCart } from '../../hooks/useAddToCart';
 import { Product } from '../../models/product';
-import ProductImages from '../FullProduct/ProductImages';
 import classes from './ProductCard.module.css';
 
 interface Props {
@@ -19,12 +18,7 @@ const ProductCard: React.FC<Props> = (props) => {
 	};
 	return (
 		<Card className={classes['card']}>
-			<Card.Img className={classes['image']} variant='top' 	
-							alt='Product' />
-							{/* <ProductImages images={props.product.images}/> */}
-
-
-		
+			<Card.Img className={classes['image']} variant='top' src={props.product.images[0]} alt='Product' />
 			<Card.Body>
 				<Card.Title style={{ fontSize: '2rem' }}>{props.product.name} </Card.Title>
 				<Card.Text style={{ fontSize: '1.5rem' }}>{props.product.price}</Card.Text>

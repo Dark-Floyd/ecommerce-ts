@@ -119,7 +119,7 @@ const products: Product[] = [
 		id: 5,
 		description: 'Pure Evil',
 		price: 500,
-		images: [`https://d3m9l0v76dty0.cloudfront.net/system/photos/6435163/large/13306935537d3739f3de6c54ef774eb6.jpg`],
+		images: [`https://m.media-amazon.com/images/I/41Xhqtw6LmL._AC_.jpg`],
 		name: 'Marauder Duck',
 		category: {
 			name: 'Doom',

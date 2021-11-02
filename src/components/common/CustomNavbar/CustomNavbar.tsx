@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav, Row, Col, Button } from 'react-bootstrap';
+import { Navbar, Container, Nav} from 'react-bootstrap';
 import classes from './CustomNavbar.module.css';
 import { useHistory } from 'react-router';
 import { Cart4 } from 'react-bootstrap-icons';
@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 interface Props {
 	productsAmount?: number;
 }
-
 const CustomNavbar: React.FC<Props> = (props) => {
 	const history = useHistory();
 	return (
@@ -25,12 +24,12 @@ const CustomNavbar: React.FC<Props> = (props) => {
 					Collectibles Express
 				</Navbar.Brand>
 
-				<Nav>
+				<Nav.Item>
 					<Nav.Link className={classes['navbar-link']} onClick={() => history.push('/cart')} as={Link} to='/cart'>
-						<Cart4 />
+						<Cart4 style={{verticalAlign:'text-top'}}/>
 						Cart ({props.productsAmount})
 					</Nav.Link>
-				</Nav>
+				</Nav.Item>
 			</Container>
 		</Navbar>
 	);

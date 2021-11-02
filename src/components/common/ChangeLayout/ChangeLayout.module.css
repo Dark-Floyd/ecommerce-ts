@@ -1,0 +1,19 @@
+.layoutCard {
+    border: none !important;
+    background-color: #4682BF !important;
+}
+
+.layoutCardHeader {
+    margin-bottom: 20px !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white !important;
+}
+
+.layoutIcon {
+    margin: 10px;
+}
+
+
+
