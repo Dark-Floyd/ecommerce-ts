@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav} from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import classes from './CustomNavbar.module.css';
 import { useHistory } from 'react-router';
 import { Cart4 } from 'react-bootstrap-icons';
@@ -23,12 +23,9 @@ const CustomNavbar: React.FC<Props> = (props) => {
 					/>{' '}
 					Collectibles Express
 				</Navbar.Brand>
-
-				<Nav.Item>
-					<Nav.Link className={classes['navbar-link']} onClick={() => history.push('/cart')} as={Link} to='/cart'>
-						<Cart4 style={{verticalAlign:'text-top'}}/>
-						Cart ({props.productsAmount})
-					</Nav.Link>
+				<Nav.Item className={classes['navbar-link']} onClick={() => history.push('/cart')} as={Link} to='/cart'>
+					<Cart4 style={{ verticalAlign: 'text-top' }} />
+					Cart ({props.productsAmount})
 				</Nav.Item>
 			</Container>
 		</Navbar>

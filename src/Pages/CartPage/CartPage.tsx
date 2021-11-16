@@ -1,7 +1,7 @@
 import React from 'react';
 import CartLines from '../../components/Cart/Cart';
 import { useHistory } from 'react-router-dom';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col,Card } from 'react-bootstrap';
 import classes from './CartPage.module.css';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import GoBackButton from '../../components/ui/CustomButton/CustomButton';

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './CartLine.module.css';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { ProductCart } from '../../../models/cart';
 import CounterInput from '../../common/CounterInput/CounterInput';
 import { useDeleteFromCart } from '../../../hooks/useDeleteFromCart';

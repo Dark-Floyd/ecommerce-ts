@@ -3,6 +3,7 @@ import { Card, Button, Row, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { useAddToCart } from '../../hooks/useAddToCart';
 import { Product } from '../../models/product';
+import CustomButton from '../ui/CustomButton/CustomButton';
 import classes from './ProductCard.module.css';
 
 interface Props {
@@ -28,9 +29,7 @@ const ProductCard: React.FC<Props> = (props) => {
 						<Button className={classes['button']} variant='primary' onClick={handleOnClick}>
 							Add to Cart
 						</Button>
-						<Button className={classes['button']} variant='primary' onClick={() => history.push('/product/' + props.product.id)}>
-							View
-						</Button>
+						<CustomButton onClick={() => history.push('/product/' + props.product.id)} name={'View'} />
 					</Col>
 				</Row>
 			</Card.Body>

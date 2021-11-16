@@ -24,3 +24,7 @@
 	max-height: 90rem !important;
 
 }
+
+.col {
+    padding: 0 !important;
+}

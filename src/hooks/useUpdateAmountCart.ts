@@ -1,7 +1,6 @@
 import { useAppDispatch } from './useAppDispatch';
 import { changeAmountToCart } from '../store/actions';
 import { ProductCart } from '../models/cart';
-import { useAlert } from 'react-alert';
 
 
 

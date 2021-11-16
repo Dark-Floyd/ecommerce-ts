@@ -2,121 +2,45 @@
 	display: inline-flex !important;
 	margin: 10px;
 	overflow: hidden;
-    border-width: 2px !important;
-    width: '33rem';
-    height: '40rem';
-    border-radius: 10px !important;
+	border-width: 2px !important;
+	width: '33rem';
+	height: '40rem';
+	border-radius: 10px !important;
 }
 
-.card:hover{
-    transition: 50ms linear;
-    transform: scale(1.1);
+.card:hover {
+	transition: 50ms linear;
+	transform: scale(1.1);
 }
 
 .image {
-	width:20rem;
-	height:24rem;
-    background-size: cover;
+	width: 20rem;
+	height: 24rem;
+	background-size: cover;
 }
-.button{
-    width: 11rem;
-    height: 4rem;
-    margin:12px;
-    font-size: 1.5rem !important;
-    background-color: #0047AB !important;
-    border-color: #0047AB !important;
-    border-radius: 8px !important;
+.button {
+	width: 11rem;
+	height: 4rem;
+	margin: 12px;
+	font-size: 1.5rem !important;
+	background-color: #0047ab !important;
+	border-color: #0047ab !important;
+	border-radius: 8px !important;
 }
 
-.button:hover{
-    background-color: #0d4086 !important;
-
-}
-.productsContainer {
-    text-decoration: none;
-    color: black;
-    padding: 0 !important;
-    height: 100%;
-    background-color: #4682BF;
-   
+.button:hover {
+	background-color: #0d4086 !important;
 }
 
 .cardProduct {
-    margin-bottom: 10px;
-    height: 100%;
+	margin-bottom: 10px;
+	height: 100%;
 }
 
 .colProduct {
-    margin-bottom: 10px;
-}
-
-
-.productLink {
-    text-decoration: none;
-    color: black;
-    padding: 0 !important;
-    height: 100%;
-}
-
-.productLink:hover {
-    color: black;
+	margin-bottom: 10px;
 }
 
 .productsCard {
-    border: none;
-}
-
-.productButton {
-    background-color: #17a2b7 !important;
-    border: none !important;
-    align-self: center;
-    width: 80%;
-}
-
-.productButton:hover {
-    background-color: #17a2b7;
-    opacity: 0.5;
-}
-
-.productsCardHeader {
-    margin-bottom: 20px;
-}
-
-.productBody {
-    display: flex;
-    flex-direction: column;
-}
-
-.productImage {
-    align-self: center;
-    max-width: 80%;
-    max-height: 44%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    height: 200px;
-}
-
-.productTitle {
-    color: #0077cc;
-    font-size: 15px !important;
-}
-
-.productDescription {
-    font-size: 12px;
-    font-weight: lighter;
-}
-
-.productImageButton {
-    color: orange;
-    margin: 1px;
-}
-
-.productImageButton:hover {
-    opacity: 0.5;
-}
-
-.productImagesButtons {
-    display: flex;
-    align-content: stretch;
-    justify-content: center;
+	border: none;
 }

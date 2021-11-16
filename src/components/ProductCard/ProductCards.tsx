@@ -9,16 +9,16 @@ interface Props {
     products: Product[];
 }
 
-const Products: React.FC<Props> = (props) => {
+const ProductCards: React.FC<Props> = (props) => {
     return (
         <ChangeLayoutCard>
             {props.products.map((product) => (
                 <Col className={styles.colProduct} key={product.id}>
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard  product={product} />
                 </Col>
             ))}
         </ChangeLayoutCard>
     );
 };
 
-export default Products;
+export default ProductCards;

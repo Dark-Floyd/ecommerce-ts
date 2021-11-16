@@ -9,28 +9,16 @@ interface Props {
 }
 
 const FullProduct: React.FC<Props> = (props) => {
-
-	const {addCartProduct} = useAddToCart(props.product);
-	const handleOnClick = (
-        event: React.MouseEvent<HTMLElement, MouseEvent>
-    ) => {
-        event.preventDefault();
-        addCartProduct();
-		
-    };
+	const { addCartProduct } = useAddToCart(props.product);
+	const handleOnClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+		event.preventDefault();
+		addCartProduct();
+	};
 	return (
 		<div>
-		<Container>
-	
-
+			<Container>
 				<Row>
-					<Col sm={5} md={5} lg={5}>
-						<Card className={classes['img-card']}>
-							<Card.Img className={classes['image']} variant='top'  />
-							<Card.Text>Gallery</Card.Text>
-						</Card>
-					</Col>
-					<Col sm={7} md={7} lg={7}>
+					<Col>
 						<Card>
 							<Card.Title style={{ fontSize: '5rem', margin: '2rem', fontFamily: 'monospace' }}>{props.product.name}</Card.Title>
 							<Card.Body>
@@ -40,7 +28,7 @@ const FullProduct: React.FC<Props> = (props) => {
 									</Col>
 									<Col sm={7} md={7} lg={7}>
 										<Card.Text style={{ fontSize: '2rem', fontStyle: 'italic', display: 'inline-block' }}>
-											Uploaded:{props.product.uploadedDate.getTime}
+											Uploaded: {props.product.uploadedDate.toString()}
 										</Card.Text>
 									</Col>
 								</Row>
@@ -61,12 +49,15 @@ const FullProduct: React.FC<Props> = (props) => {
 											</div>
 										);
 									})}
-								
 								</Row>
 							</Card.Body>
 							<Row>
 								<Col sm={5} md={5} lg={5}>
-									<Button className={classes['button']} style={{ fontWeight: 'bold',width:'12rem',height:'5rem' }} onClick={handleOnClick}>
+									<Button
+										className={classes['button']}
+										style={{ fontWeight: 'bold', width: '12rem', height: '5rem' }}
+										onClick={handleOnClick}
+									>
 										Add to Cart
 									</Button>
 								</Col>

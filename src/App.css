@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: #4682BF;
+  height: 200rem;
 }
 .navbar {
   z-index: 200;

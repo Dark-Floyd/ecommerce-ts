@@ -6,6 +6,9 @@
 	background-color: #0047ab !important;
 	border-color: #0047ab !important;
 	border-radius: 8px !important;
-    font-weight: bold !important;
-	
+	font-weight: bold !important;
+}
+
+.button:hover {
+	background-color: #0d4086 !important;
 }

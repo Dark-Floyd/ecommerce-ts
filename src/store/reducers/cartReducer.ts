@@ -10,16 +10,16 @@ const addToCart = (state: Cart, action: CartAction): Cart => {
     console.log(action)
     const updatedProducts = [...state.products];
 
-    const productIndex = state.products.findIndex(
+    const product = state.products.find(
         (productCart) => productCart.product.id === action.product!.id
     );
 
     let updatedProduct: ProductCart;
 
-    if (productIndex !== -1) {
-        updatedProduct = { ...updatedProducts[productIndex] };
-        updatedProduct.amount++;
-        updatedProducts[productIndex] = updatedProduct;
+    if (product) {
+        // updatedProduct = updatedProducts[productIndex] ;
+        product.amount++;
+        // updatedProducts[productIndex] = updatedProduct;
     } else {
         
         updatedProduct = {

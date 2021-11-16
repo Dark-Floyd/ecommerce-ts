@@ -24,3 +24,13 @@
 	max-height: 90rem !important;
 
 }
+.sideImage {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #f2f2f4;
+    margin: 1px
+}
+.imagesCard {
+    display: flex;
+    align-items: center;
+}

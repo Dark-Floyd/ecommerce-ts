@@ -13,10 +13,7 @@ const getCartAction = (
 ): CartAction => {
     return {
         type: type,
-        product: options?.product,
-        quantity: options?.quantity,
-        cart: options?.cart,
-        productId: options?.productId,
+        ...options
     };
 };
 
