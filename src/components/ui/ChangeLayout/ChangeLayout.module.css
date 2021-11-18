@@ -1,0 +1,20 @@
+.layoutCard {
+    border: none !important;
+   
+}
+
+.layoutCardHeader {
+    margin-bottom: 20px !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: aliceblue !important; 
+  
+}
+
+.layoutIcon {
+    margin: 10px;
+}
+
+
+

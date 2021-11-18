@@ -6,6 +6,7 @@
 	width: '33rem';
 	height: '40rem';
 	border-radius: 10px !important;
+	background-color: white;
 }
 
 .card:hover {
@@ -35,6 +36,7 @@
 .cardProduct {
 	margin-bottom: 10px;
 	height: 100%;
+
 }
 
 .colProduct {
