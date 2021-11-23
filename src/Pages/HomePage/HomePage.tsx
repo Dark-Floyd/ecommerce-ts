@@ -7,20 +7,32 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 import { filterSellers, sortHighToLow, sortLowToHigh } from '../../store/actions';
 //import SelectFilter from '../../components/common/Filters/SelectFilter';
 import ProductCards from '../../components/ProductCard/ProductCards';
+import useFetchProducts from "../../hooks/useFetchProducts";
+import Loading from "../../components/ui/Loading/Loading";
+import { Redirect } from "react-router-dom";
 
 const HomePage: React.FC = () => {
 	const dispatch = useAppDispatch();
-	const sellersNames = useAppSelector((state) => state.productsReducer.allProductsSellersNames);
-	const priceSelectors = [
-		{
-			name: 'Low to high',
-			onClick: () => dispatch(sortLowToHigh()),
-		},
-		{
-			name: 'High to low',
-			onClick: () => dispatch(sortHighToLow()),
-		},
-	];
+    const { loading, error } = useFetchProducts();
+    const sellersNames = useAppSelector(
+        (state) => state.productsReducer.allProductsSellersNames
+    );
+
+    const products = useAppSelector((state) => state.productsReducer.products);
+
+    if (loading) return <Loading />;
+    if (error) return <Redirect to="/error" />;
+
+    const priceSelectors = [
+        {
+            name: "Low to high",
+            onClick: () => dispatch(sortLowToHigh()),
+        },
+        {
+            name: "High to low",
+            onClick: () => dispatch(sortHighToLow()),
+        },
+    ];
 
 	return (
 		<Container>

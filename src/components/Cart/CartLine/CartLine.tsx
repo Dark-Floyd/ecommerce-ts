@@ -10,16 +10,15 @@ interface Props {
 	productCart: ProductCart;
 }
 const CartLine: React.FC<Props> = (props) => {
-	const { deleteProductFromCart } = useDeleteFromCart(props.productCart.product.id);
-	const {updateCartProduct} = useUpdateAmountCart(props.productCart);
-
+	const { deleteCartProduct, deleteCartProductLoading, deleteProductError } = useDeleteFromCart(props.productCart.product.id);
+	const { updateCartProductAmount, updateCartProductAmountLoading, updateCartProductAmountError } = useUpdateAmountCart(props.productCart);
 
 	const onQuantityChange = (value: number) => {
-	    updateCartProduct(value);
+		updateCartProductAmount(value);
 	};
 
 	const onTrash = () => {
-		deleteProductFromCart();
+		deleteCartProduct();
 	};
 
 	return (
@@ -45,9 +44,7 @@ const CartLine: React.FC<Props> = (props) => {
 						{props.productCart.product.price}$
 					</Col>
 					<Col sm={2} md={2} lg={2}>
-						<CounterInput 
-						inputValue={props.productCart.amount}
-						onChange={onQuantityChange}></CounterInput>
+						<CounterInput inputValue={props.productCart.amount} onChange={onQuantityChange}></CounterInput>
 					</Col>
 					<Col sm={1} md={1} lg={1}>
 						<button className={classes['trash-button']}>
@@ -59,7 +56,7 @@ const CartLine: React.FC<Props> = (props) => {
 								className='bi bi-trash'
 								viewBox='0 0 16 16'
 								onClick={onTrash}
-								style={{display:'block'}}
+								style={{ display: 'block' }}
 							>
 								<path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z' />
 								<path
