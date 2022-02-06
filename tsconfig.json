@@ -22,5 +22,9 @@
   },
   "include": [
     "src"
-, "styles.d.ts"  ]
+, "styles.d.ts" ],
+"typeRoots": [
+  "../../@types",
+  "../../node_modules/@types"
+]
 }

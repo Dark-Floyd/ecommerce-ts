@@ -62,6 +62,7 @@
   },
   "devDependencies": {
     "@types/react-alert": "^5.2.1",
-    "@types/react-router-dom": "^5.3.2"
+    "@types/react-router-dom": "^5.3.2",
+    "react-alert-template-basic": "^1.0.2"
   }
 }

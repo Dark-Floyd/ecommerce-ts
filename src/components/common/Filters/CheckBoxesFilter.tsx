@@ -13,7 +13,7 @@ const CheckBoxesFilter: React.FC<Props> = (props) => {
         new Array(Object.keys(props.selectors).length).fill(false)
     );
 
-    // Each time we render the filter, we need show all products
+    
     useEffect(() => {
         props.filter(Object.keys(props.selectors));
     }, []);
